@@ -1,0 +1,34 @@
+<html>
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <div class="corpo">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hello, World!<br>Eu sou o <span class="highlight">Vitor</span></h1>
+                <p>
+                    Tenho 20 anos e sou formado em Técnico em Tecnologia da Informação (TI), além de estudante de
+                    Análise e Desenvolvimento de Sistemas (ADS).
+                </p>
+                <p>
+                    Desde cedo, fui fascinado por tecnologia e seu impacto na nossa vida, o que me inspirou a seguir
+                    esse
+                    caminho e me dedicar ao aprendizado constante nessa área incrível.
+                </p>
+                <br>
+                <div class="hero-buttons">
+                    <a href="/projetos" class="btn">Meus Projetos</a>
+                    <a href="/contato" class="btn btn-secundario">Contato</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../static/imgs/foto_eu.png" alt="Developer holding a camera">
+            </div>
+        </section>
+    </div>
+</body>
+
+{%endblock%}
+
+</html>

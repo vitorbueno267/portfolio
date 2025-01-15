@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="../static/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+
+<header>
+    {% block head %}
+    <div class="container-link">
+        <div class="link"><a href="/">Home</a></div>
+        <div class="link"><a href="/sobremim">Sobre mim</a></div>
+        <div class="link"><a href="/projetos">Projetos</a></div>
+        <div class="link"><a href="/contato">Contato</a></div>
+    </div>
+    {% endblock %}
+</header>
+
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+
+<footer>
+    <div class="container-link">
+        <div class="link"><a href="mailto:vitorbueno191@gmail.com" target="_blank">E-mail</a></div>
+        <div class="link"><a href="https://instagram.com/_bueno223" target="_blank">Instagram</a></div>
+        <div class="link"><a href="https://www.linkedin.com/in/vitor267" target="_blank">Linkedin</a></div>
+        <div class="link"><a href="https://github.com/vitorbueno267" target="_blank">GitHub</a></div>
+    </div>
+    <p>&copy; 2025 Vitor Bueno dos Santos. Todos os direitos reservados.</p>
+</footer>
+
+</html>
