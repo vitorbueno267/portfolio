@@ -1,48 +1,57 @@
 <html>
-    {% extends 'base.html' %}
-    {% block content %}
-    
-    <body>
-        <div class="corpo">
-            <div class="container">
-                <!-- Imagem na lateral esquerda -->
-                <div class="imagem-lateral">
-                    <img src="{{ url_for('static', filename='images/sua-imagem.jpg') }}" alt="Minha foto" />
-                </div>
-    
-                <!-- Texto principal -->
-                <div class="content">
-                    <h2 class="titulo">Sobre Mim</h2>
-                    <p>
-                        Sou apaixonado por programar e criar soluções criativas para desafios tecnológicos. Adoro explorar novas
-                        ferramentas, linguagens de programação e acompanhar as tendências que moldam o futuro da tecnologia. Além
-                        disso, os games são uma grande parte da minha vida, não apenas como entretenimento, mas também como
-                        inspiração para inovação e trabalho em equipe.
-                    </p>
-                    <p>
-                        Sou uma pessoa comunicativa, com uma facilidade natural para interagir com as pessoas e criar bons
-                        relacionamentos, tanto no âmbito pessoal quanto profissional. Acredito que saber trabalhar em equipe e
-                        compartilhar ideias é essencial para o sucesso em qualquer área.
-                    </p>
-                    <p>
-                        Nos meus momentos livres, gosto de passar tempo com minha família e amigos, pois acredito que os laços e
-                        conexões pessoais são fundamentais para equilibrar a vida. Esses momentos são preciosos para recarregar as
-                        energias e manter o foco nos meus objetivos.
-                    </p>
-                    <p>
-                        Curioso, determinado e sociável, estou sempre em busca de novos aprendizados e desafios que me permitam
-                        crescer profissionalmente. Meu objetivo é contribuir com minha paixão e habilidades para o desenvolvimento
-                        de projetos que causem impacto positivo no mundo.
-                    </p>
-    
-                    <!-- Link para o currículo -->
-                    <div class="link-curriculo">
-                        <a href="https://link-para-seu-curriculo.com" target="_blank">Acesse meu currículo</a>
-                    </div>
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <div class="corpo">
+        <div class="sobre-container">
+            <br>
+        
+            <div class="imagem-lateral">
+                <img src="../static/imgs/foto_eu2.png" alt="Developer holding a camera">
+            </div>
+
+            <!-- Texto principal -->
+             
+            <div class="sobre-content">
+                <h2 class="titulo">Sobre Mim</h2>
+                <p>
+                    Sou apaixonado por programar e criar soluções criativas para desafios tecnológicos. Adoro explorar
+                    novas
+                    ferramentas, linguagens de programação e acompanhar as tendências que moldam o futuro da tecnologia.
+                    Além
+                    disso, os games são uma grande parte da minha vida, não apenas como entretenimento, mas também como
+                    inspiração para inovação e trabalho em equipe.
+                </p>
+                <p>
+                    Sou uma pessoa comunicativa, com uma facilidade natural para interagir com as pessoas e criar bons
+                    relacionamentos, tanto no âmbito pessoal quanto profissional. Acredito que saber trabalhar em equipe
+                    e
+                    compartilhar ideias é essencial para o sucesso em qualquer área.
+                </p>
+                <p>
+                    Nos meus momentos livres, gosto de passar tempo com minha família e amigos, pois acredito que os
+                    laços e
+                    conexões pessoais são fundamentais para equilibrar a vida. Esses momentos são preciosos para
+                    recarregar as
+                    energias e manter o foco nos meus objetivos.
+                </p>
+                <p>
+                    Curioso, determinado e sociável, estou sempre em busca de novos aprendizados e desafios que me
+                    permitam
+                    crescer profissionalmente. Meu objetivo é contribuir com minha paixão e habilidades para o
+                    desenvolvimento
+                    de projetos que causem impacto positivo no mundo.
+                </p>
+                
+                <!-- Link para o currículo -->
+                <div class="link-curriculo">
+                    <a href="https://link-para-seu-curriculo.com" target="_blank">Acesse meu currículo</a>
                 </div>
             </div>
         </div>
-    </body>
-    {% endblock %}
+    </div>
+</body>
+{% endblock %}
 
 </html>

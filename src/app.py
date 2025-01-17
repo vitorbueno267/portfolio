@@ -23,7 +23,7 @@ def projetos():
 
 @app.route("/contato")
 def contato():
-    title = "contato"
+    title = "Contato"
     return render_template("contato.html", title=title)
 
 

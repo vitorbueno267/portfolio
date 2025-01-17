@@ -3,13 +3,40 @@
 {% block content %}
 
 <body>
-    <div class="corpo" >  
-    <p>
-        contato!
-    </p>
+    <div class="corpo">
+        <h1 class="title">Entre em Contato</h1>
+        <div class="contato-container">
+            <!-- Lateral Esquerda com Informação -->
+            <div class="contato-info">
+                <h2>Fale Comigo</h2>
+                <p>Se você tem dúvidas, sugestões ou deseja colaborar, envie-nos uma mensagem!</p>
+                <p>Email: <a href="mailto:vitorbueno191@gmail.com" 
+                    class="link-curriculo">vitorbueno191@gmail.com</a></p>
+                <p>Endereço: São Jose dos campos -SP</p>
+            </div>
 
-</div>
-
+            <!-- Formulário de Contato -->
+            <div class="contato-form">
+                <form class="form-group"
+                action="https://formspree.io/f/mdkkvagq"
+                method="POST"
+              >
+                <label>
+                  Seu email:
+                  <input type="email" name="email">
+                </label>
+                <label>
+                  Sua mensagem:
+                  <textarea name="message"></textarea>
+                </label>
+                <!-- your other form fields go here -->
+                <button class="btn" type="submit"><strong>Enviar</strong></button>
+              </form>
+            </div>
+        </div>
+        <div class="estrela"> <img src="../static/imgs/estrela.gif" alt="Developer holding a camera">
+        </div> 
+    </div>
 </body>
 {% endblock %}
 
