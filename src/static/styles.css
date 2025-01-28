@@ -580,3 +580,51 @@ button.btn:hover {
     visibility: visible;
     transition: opacity 0.3s ease-in-out;
 }
+        /* Estilo para o texto digitado e o cursor */
+        #typing-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .blinking-cursor {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff0000;
+            animation: blink 0.7s steps(2) infinite;
+        }
+
+        .highlight-red {
+            color: #f53b57;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        /* Animação para a imagem */
+        .animate-slide {
+            position: relative;
+            animation: slide-in 1.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    

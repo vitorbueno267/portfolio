@@ -6,7 +6,9 @@
     <div class="corpo">
         <section class="hero">
             <div class="hero-content">
-                <h1>Hello, World!<br>Eu sou o <span class="highlight">Vitor</span></h1>
+                <h1>
+                    <span id="typing-text"></span><span class="blinking-cursor">|</span>
+                </h1>
                 <p>
                     Tenho 20 anos e sou formado em Técnico em Tecnologia da Informação (TI), além de estudante de
                     Análise e Desenvolvimento de Sistemas (ADS).
@@ -23,12 +25,36 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="../static/imgs/foto_eu.png" alt="Developer holding a camera">
+                <img src="../static/imgs/foto_eu.png" alt="Developer holding a camera" class="animate-slide">
             </div>
         </section>
     </div>
+
+    <!-- Script para efeito de digitação -->
+    <script>
+        const typingText = document.getElementById("typing-text");
+        const textToType = "Hello, World! Eu sou o "; // Texto antes do nome
+        const name = "<span class='highlight-red'>Vitor</span>"; // Nome com destaque
+        const typingSpeed = 100; // Velocidade de digitação (ms)
+
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < textToType.length) {
+                typingText.innerHTML += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, typingSpeed);
+            } else if (charIndex === textToType.length) {
+                typingText.innerHTML += name;
+                charIndex++;
+            }
+        }
+
+        // Inicia o efeito de digitação quando a página carrega
+        window.onload = typeText;
+    </script>
+
 </body>
 
-{%endblock%}
-
+{% endblock %}
 </html>
