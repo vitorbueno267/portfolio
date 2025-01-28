@@ -218,8 +218,6 @@ footer .link a:hover {
     object-fit: cover;
 }
 
-
-
 .sobre-content {
     flex: 1;
     padding: 20px;
@@ -405,7 +403,6 @@ button.btn:hover {
 
     .sobre-content {
         padding: 0 10px;
-        
     }
 
     .titulo {
@@ -447,7 +444,6 @@ button.btn:hover {
     margin: 5% 0%;
 }
 
-
 @media (max-width: 768px) {
     footer .container-link {
         justify-content: center; 
@@ -458,7 +454,6 @@ button.btn:hover {
 
     .logo{
         margin-bottom: 0;
-        
     } 
 
     .imagem-lateral img {
@@ -478,8 +473,8 @@ button.btn:hover {
     width: 35px !important;
     height: auto;
 }
-
 }
+
 @media (max-width: 480px) {
     footer .container-link {
         gap: 10px; 
@@ -497,8 +492,91 @@ button.btn:hover {
     }
 
 }
+
 .logo img{
     width: 80px;
     height: auto;
-    
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.modal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    flex: content !important;
+    display: flex !important;
+    justify-content: right !important;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+.modal-description {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
 }

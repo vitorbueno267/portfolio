@@ -1,5 +1,6 @@
 <html>
 {% extends 'base.html' %}
+
 {% block content %}
 
 <body>
@@ -9,29 +10,98 @@
 
             <div class="projeto">
                 <h2>Sistema de Controle de Estoque</h2>
-                <p>Um sistema desenvolvido para gerenciar o estoque de pequenos negócios, com funcionalidades de cadastro de produtos, controle de entrada e saída, e relatórios.</p>
-                <a href="#" class="btn">Ver Detalhes</a>
-                <a href="#" class="btn">GitHub</a>
+                <p>Um sistema desenvolvido para gerenciar o estoque de pequenos negócios, com funcionalidades de
+                    cadastro de produtos, controle de entrada e saída, e relatórios.</p>
+                <a href="#" class="btn" id="btn-projeto1">Ver Detalhes</a>
+                <a href="https://github.com/vitorbueno267/sistemaestoque" target="_blank" class="btn">GitHub</a>
             </div>
 
-
             <div class="projeto">
-                <h2>Projeto 2: Portfólio Pessoal</h2>
-                <p>Este site! Desenvolvido para apresentar minhas habilidades, projetos e experiência de forma profissional e responsiva.</p>
-                <a href="#" class="btn">Ver Detalhes</a>
-                <a href="#" class="btn">GitHub</a>
+                <h2>Portfólio Pessoal</h2>
+                <p>Este site! Desenvolvido para apresentar minhas habilidades, projetos e experiência de forma
+                    profissional e responsiva.</p>
+                <a href="#" class="btn" id="btn-projeto2">Ver Detalhes</a>
+                <a href="https://github.com/vitorbueno267/portfolio" target="_blank" class="btn">GitHub</a>
             </div>
 
-
             <div class="projeto">
-                <h2>Projeto 3: Aplicativo de Tarefas</h2>
-                <p>Um app simples para organização de tarefas diárias, com suporte para adicionar, editar e excluir tarefas. Feito com HTML, CSS, JavaScript e backend em Node.js.</p>
-                <a href="#" class="btn">Ver Detalhes</a>
-                <a href="#" class="btn">GitHub</a>
+                <h2>Projeto</h2>
+                <p>Em construção...</p>
+                <a href="#" class="btn" id="btn-projeto3">Ver Detalhes</a>
+                <a href="#" target="_blank" class="btn">GitHub</a>
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p class="close">&times;</p> 
+            <img id="modal-image" src="" alt="Imagem do Projeto">
+            <div class="modal-description">
+                <h2 id="modal-title">Nome do Projeto</h2>
+                <p id="modal-description">Descrição do projeto.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById("myModal");
+        const btnProjeto1 = document.getElementById("btn-projeto1");
+        const btnProjeto2 = document.getElementById("btn-projeto2");
+        const btnProjeto3 = document.getElementById("btn-projeto3");
+        const span = document.getElementsByClassName("close")[0];
+
+        // Define project details (images and descriptions)
+        const projects = {
+            1: {
+                title: "Sistema de Controle de Estoque",
+                img: "../static/imgs/projeto_estoque.png",  // Replace with your image URL
+                description: "Sistema de estoque ágil e funcional para cadastrar e editar produtos, prestadores e clientes. Para esse projeto, foi usado MySQL, JavaScript e Node.js."
+            },
+            2: {
+                title: "Portfólio Pessoal",
+                img: "../static/imgs/portfolio.png",  // Replace with your image URL
+                description: "Detalhes sobre o Portfólio Pessoal."
+            },
+            3: {
+                title: "Aplicativo de Tarefas",
+                img: "../static/imgs/construcao.png",  // Replace with your image URL
+                description: "Detalhes sobre o Aplicativo de Tarefas."
+            }
+        };
+
+        function openModal(projectId) {
+            const project = projects[projectId];
+            document.getElementById("modal-image").src = project.img;
+            document.getElementById("modal-title").textContent = project.title; // Atualiza o título
+            document.getElementById("modal-description").textContent = project.description; // Atualiza a descrição
+            modal.style.display = "block";
+        }
+
+
+        // Event listeners for buttons
+        btnProjeto1.onclick = () => openModal(1);
+        btnProjeto2.onclick = () => openModal(2);
+        btnProjeto3.onclick = () => openModal(3);
+
+        // Close the modal
+        span.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        // Close the modal if clicked outside of the modal content
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+
+
 </body>
 
 {% endblock %}
+
 </html>
