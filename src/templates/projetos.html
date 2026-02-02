@@ -1,107 +1,115 @@
-<html>
 {% extends 'base.html' %}
 
 {% block content %}
+<h1 class="title">Meus Projetos</h1>
+<div class="projetos-container">
 
-<body>
-    <div class="corpo">
-        <h1 class="title">Meus Projetos</h1>
-        <div class="projetos-container">
-
-            <div class="projeto">
-                <h2>Sistema de Controle de Estoque</h2>
-                <p>Um sistema desenvolvido para gerenciar o estoque de pequenos negócios, com funcionalidades de
-                    cadastro de produtos, controle de entrada e saída, e relatórios.</p>
-                <a href="#" class="btn" id="btn-projeto1">Ver Detalhes</a>
-                <a href="https://github.com/vitorbueno267/sistemaestoque" target="_blank" class="btn">GitHub</a>
-            </div>
-
-            <div class="projeto">
-                <h2>Portfólio Pessoal</h2>
-                <p>Este site! Desenvolvido para apresentar minhas habilidades, projetos e experiência de forma
-                    profissional e responsiva.</p>
-                <a href="#" class="btn" id="btn-projeto2">Ver Detalhes</a>
-                <a href="https://github.com/vitorbueno267/portfolio" target="_blank" class="btn">GitHub</a>
-            </div>
-
-            <div class="projeto">
-                <h2>Projeto</h2>
-                <p>Em construção...</p>
-                <a href="#" class="btn" id="btn-projeto3">Ver Detalhes</a>
-                <a href="#" target="_blank" class="btn">GitHub</a>
-            </div>
-        </div>
+    <div class="projeto">
+        <h2>Sistema de Controle de Estoque</h2>
+        <p>Sistema desenvolvido para gerenciar o estoque de pequenos negócios, com funcionalidades de
+            cadastro de produtos, controle de entrada e saída, e relatórios.</p>
+        <a href="#" class="btn" id="btn-projeto1">Ver Detalhes</a>
+        <a href="https://github.com/vitorbueno267/sistemaestoque" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
     </div>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <p class="close">&times;</p> 
-            <img id="modal-image" src="" alt="Imagem do Projeto">
-            <div class="modal-description">
-                <h2 id="modal-title">Nome do Projeto</h2>
-                <p id="modal-description">Descrição do projeto.</p>
-            </div>
-        </div>
+    <div class="projeto">
+        <h2>Portfólio Pessoal</h2>
+        <p>Este site! Desenvolvido para apresentar minhas habilidades, projetos e experiências.</p>
+        <a href="#" class="btn" id="btn-projeto2">Ver Detalhes</a>
+        <a href="https://github.com/vitorbueno267/portfolio" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
     </div>
 
-    <script>
-        // Modal functionality
-        const modal = document.getElementById("myModal");
-        const btnProjeto1 = document.getElementById("btn-projeto1");
-        const btnProjeto2 = document.getElementById("btn-projeto2");
-        const btnProjeto3 = document.getElementById("btn-projeto3");
-        const span = document.getElementsByClassName("close")[0];
+    <!-- <div class="projeto">
+        <h2>Projeto</h2>
+        <p>Em construção...</p>
+        <a href="#" class="btn" id="btn-projeto3">Ver Detalhes</a>
+        <a href="#" target="_blank" class="btn">GitHub</a>
+    </div> -->
+</div>
 
-        // Define project details (images and descriptions)
-        const projects = {
-            1: {
-                title: "Sistema de Controle de Estoque",
-                img: "../static/imgs/projeto_estoque.png",  // Replace with your image URL
-                description: "Sistema de estoque ágil e funcional para cadastrar e editar produtos, prestadores e clientes. Para esse projeto, foi usado MySQL, JavaScript e Node.js."
-            },
-            2: {
-                title: "Portfólio Pessoal",
-                img: "../static/imgs/portfolio.png",  // Replace with your image URL
-                description: "Este projeto é um portfólio pessoal desenvolvido para apresentar minhas habilidades, projetos e experiências como desenvolvedor. Ele foi criado utilizando HTML5, CSS3 e JavaScript."
-            },
-            3: {
-                //title: "Aplicativo de Tarefas",
-                img: "../static/imgs/construcao.png",  // Replace with your image URL
-                description: "Em breve."
-            }
-        };
+<!-- Modal -->
+<div id="myModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description-text" aria-hidden="true">
+    <div class="modal-content" tabindex="-1">
+        <button type="button" class="close" aria-label="Fechar modal">&times;</button>
+        <img id="modal-image" src="" alt="Imagem do Projeto">
+        <div class="modal-description">
+            <h2 id="modal-title">Nome do Projeto</h2>
+            <p id="modal-description-text">Descrição do projeto.</p>
+        </div>
+    </div>
+</div>
 
-        function openModal(projectId) {
-            const project = projects[projectId];
-            document.getElementById("modal-image").src = project.img;
-            document.getElementById("modal-title").textContent = project.title; // Atualiza o título
-            document.getElementById("modal-description").textContent = project.description; // Atualiza a descrição
-            modal.style.display = "block";
+<script>
+    // Modal functionality
+    const modal = document.getElementById("myModal");
+    const btnProjeto1 = document.getElementById("btn-projeto1");
+    const btnProjeto2 = document.getElementById("btn-projeto2");
+    const btnProjeto3 = document.getElementById("btn-projeto3");
+    const closeButton = document.querySelector(".close");
+    const modalContent = document.querySelector(".modal-content");
+    let lastFocusedElement = null;
+
+    // Define project details (images and descriptions)
+    const projects = {
+        1: {
+            title: "Sistema de Controle de Estoque",
+            img: "../static/imgs/projeto_estoque.png",
+            description: "Sistema de estoque ágil e funcional para cadastrar e editar produtos, prestadores e clientes. Para esse projeto, foi usado MySQL, JavaScript e Node.js."
+        },
+        2: {
+            title: "Portfólio Pessoal",
+            img: "../static/imgs/portfolio.png",
+            description: "Este projeto é um portfólio pessoal desenvolvido para apresentar minhas habilidades, projetos e experiências como desenvolvedor. Ele foi criado utilizando HTML5, CSS3 e JavaScript."
+        },
+        3: {
+            //title: "Aplicativo de Tarefas",
+            img: "../static/imgs/construcao.png",
+            description: "Em breve."
         }
+    };
 
+    function openModal(projectId) {
+        const project = projects[projectId];
+        document.getElementById("modal-image").src = project.img;
+        document.getElementById("modal-title").textContent = project.title;
+        document.getElementById("modal-description-text").textContent = project.description;
+        modal.style.display = "block";
+        modal.setAttribute("aria-hidden", "false");
+        lastFocusedElement = document.activeElement;
+        if (modalContent) {
+            modalContent.focus();
+        }
+    }
 
-        // Event listeners for buttons
-        btnProjeto1.onclick = () => openModal(1);
-        btnProjeto2.onclick = () => openModal(2);
-        btnProjeto3.onclick = () => openModal(3);
+    function closeModal() {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+    }
 
-        // Close the modal
-        span.onclick = () => {
-            modal.style.display = "none";
-        };
+    // Event listeners for buttons
+    if (btnProjeto1) btnProjeto1.onclick = () => openModal(1);
+    if (btnProjeto2) btnProjeto2.onclick = () => openModal(2);
+    if (btnProjeto3) btnProjeto3.onclick = () => openModal(3);
 
-        // Close the modal if clicked outside of the modal content
-        window.onclick = (event) => {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-    </script>
+    // Close the modal
+    if (closeButton) closeButton.onclick = closeModal;
 
+    // Close the modal if clicked outside of the modal content
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
 
-</body>
+    // Close modal on Escape
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.style.display === "block") {
+            closeModal();
+        }
+    });
+</script>
 
 {% endblock %}
-
-</html>
