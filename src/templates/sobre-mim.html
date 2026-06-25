@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="sobre-container">
-    <br>
-
+<section class="sobre-container">
     <div class="imagem-lateral">
-        <img src="../static/imgs/foto_eu2.png" alt="Vitor em retrato">
+        <img src="../static/imgs/foto_eu2.png" alt="Vitor em retrato profissional">
     </div>
 
-    <!-- Texto principal -->
-
-    <div class="sobre-content">
+    <article class="sobre-content">
         <h2 class="titulo">Sobre Mim</h2>
         <p>
             Gosto bastante de programar, identificar problemas e criar soluções. O mundo da tecnologia me empolga bastante e estou sempre acompanhando o que há de novo.
@@ -20,15 +16,16 @@
             fazer amizades e acredito que trocar ideias é essencial para o crescimento pessoal e profissional.
         </p>
         <p>
-            Em trabalhos anteriores, sempre busquei formas de solucionar problemas cotidianos e posso dizer que meu objetivo é 
+            Em trabalhos anteriores, sempre busquei formas de solucionar problemas cotidianos e posso dizer que meu objetivo é
             aprimorar minhas habilidades e desenvolver projetos que realmente façam a diferença.
         </p>
 
-       
         <div class="link-curriculo">
-            <a href="https://drive.google.com/file/d/1PnJye04DPZsl59e4mQY0B7QBVAcral1G/view?usp=sharing"
-                target="_blank" rel="noopener noreferrer">Acesse aqui o meu currículo!</a>
+            <a href="https://drive.google.com/file/d/1DEYzLJA5vN4BT-QV2-xQSh43qart4_MP/view?usp=sharing"
+                target="_blank" rel="noopener noreferrer" aria-label="Acessar meu currículo no Google Drive">
+                Acesse aqui o meu currículo!
+            </a>
         </div>
-    </div>
-</div>
+    </article>
+</section>
 {% endblock %}

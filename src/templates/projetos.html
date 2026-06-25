@@ -2,36 +2,29 @@
 
 {% block content %}
 <h1 class="title">Meus Projetos</h1>
-<div class="projetos-container">
+<section class="projetos-container">
 
-    <div class="projeto">
+    <article class="projeto">
         <h2>Sistema de Controle de Estoque</h2>
         <p>Sistema desenvolvido para gerenciar o estoque de pequenos negócios, com funcionalidades de
             cadastro de produtos, controle de entrada e saída, e relatórios.</p>
-        <a href="#" class="btn" id="btn-projeto1">Ver Detalhes</a>
-        <a href="https://github.com/vitorbueno267/sistemaestoque" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
-    </div>
+        <button class="btn" id="btn-projeto1" aria-label="Ver detalhes do Sistema de Controle de Estoque">Ver Detalhes</button>
+        <a href="https://github.com/vitorbueno267/sistemaestoque" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Código no GitHub">GitHub</a>
+    </article>
 
-    <div class="projeto">
+    <article class="projeto">
         <h2>Portfólio Pessoal</h2>
         <p>Este site! Desenvolvido para apresentar minhas habilidades, projetos e experiências.</p>
-        <a href="#" class="btn" id="btn-projeto2">Ver Detalhes</a>
-        <a href="https://github.com/vitorbueno267/portfolio" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
-    </div>
-
-    <!-- <div class="projeto">
-        <h2>Projeto</h2>
-        <p>Em construção...</p>
-        <a href="#" class="btn" id="btn-projeto3">Ver Detalhes</a>
-        <a href="#" target="_blank" class="btn">GitHub</a>
-    </div> -->
-</div>
+        <button class="btn" id="btn-projeto2" aria-label="Ver detalhes do Portfólio Pessoal">Ver Detalhes</button>
+        <a href="https://github.com/vitorbueno267/portfolio" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Código no GitHub">GitHub</a>
+    </article>
+</section>
 
 <!-- Modal -->
 <div id="myModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description-text" aria-hidden="true">
     <div class="modal-content" tabindex="-1">
         <button type="button" class="close" aria-label="Fechar modal">&times;</button>
-        <img id="modal-image" src="" alt="Imagem do Projeto">
+        <img id="modal-image" src="" alt="">
         <div class="modal-description">
             <h2 id="modal-title">Nome do Projeto</h2>
             <p id="modal-description-text">Descrição do projeto.</p>
@@ -40,16 +33,13 @@
 </div>
 
 <script>
-    // Modal functionality
     const modal = document.getElementById("myModal");
     const btnProjeto1 = document.getElementById("btn-projeto1");
     const btnProjeto2 = document.getElementById("btn-projeto2");
-    const btnProjeto3 = document.getElementById("btn-projeto3");
     const closeButton = document.querySelector(".close");
     const modalContent = document.querySelector(".modal-content");
     let lastFocusedElement = null;
 
-    // Define project details (images and descriptions)
     const projects = {
         1: {
             title: "Sistema de Controle de Estoque",
@@ -60,17 +50,13 @@
             title: "Portfólio Pessoal",
             img: "../static/imgs/portfolio.png",
             description: "Este projeto é um portfólio pessoal desenvolvido para apresentar minhas habilidades, projetos e experiências como desenvolvedor. Ele foi criado utilizando HTML5, CSS3 e JavaScript."
-        },
-        3: {
-            //title: "Aplicativo de Tarefas",
-            img: "../static/imgs/construcao.png",
-            description: "Em breve."
         }
     };
 
     function openModal(projectId) {
         const project = projects[projectId];
         document.getElementById("modal-image").src = project.img;
+        document.getElementById("modal-image").alt = project.title;
         document.getElementById("modal-title").textContent = project.title;
         document.getElementById("modal-description-text").textContent = project.description;
         modal.style.display = "block";
@@ -89,22 +75,17 @@
         }
     }
 
-    // Event listeners for buttons
     if (btnProjeto1) btnProjeto1.onclick = () => openModal(1);
     if (btnProjeto2) btnProjeto2.onclick = () => openModal(2);
-    if (btnProjeto3) btnProjeto3.onclick = () => openModal(3);
 
-    // Close the modal
     if (closeButton) closeButton.onclick = closeModal;
 
-    // Close the modal if clicked outside of the modal content
     window.onclick = (event) => {
         if (event.target === modal) {
             closeModal();
         }
     };
 
-    // Close modal on Escape
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && modal.style.display === "block") {
             closeModal();

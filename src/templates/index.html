@@ -1,35 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="hero">
-    <div class="hero-content">
+    <article class="hero-content">
         <h1>
             <span id="typing-text"></span><span class="blinking-cursor">|</span>
         </h1>
         <p>
-            Tenho 21 anos, sou Técnico em Informática, estudante de
-            Análise e Desenvolvimento de Sistemas (ADS) e atuo na área de sistemas há 2 anos.
+            Tenho 22 anos, sou Técnico em Informática, estudante de
+            Análise e Desenvolvimento de Sistemas (ADS) e atuo na área de sistemas há 3 anos.
         </p>
         <p>
             Desde cedo sempre fui fascinado por tecnologia e pelo seu impacto na nossa vida, o que me inspirou a seguir
             este caminho de desenvolvimento.
         </p>
-        <br>
         <div class="hero-buttons">
             <a href="/projetos" class="btn">Meus Projetos</a>
             <a href="/contato" class="btn btn-secundario">Contato</a>
         </div>
-    </div>
+    </article>
     <div class="hero-image">
-        <img src="../static/imgs/foto_eu.png" alt="Vitor, desenvolvedor" class="animate-slide">
+        <img src="../static/imgs/foto_eu.png" alt="Vitor, desenvolvedor full stack" class="animate-slide">
     </div>
 </section>
 
-<!-- Script para efeito de digitação -->
 <script>
     const typingText = document.getElementById("typing-text");
-    const textToType = "Hello, World! Eu sou o "; // Texto antes do nome
-    const name = "<span class='highlight-red'>Vitor</span>"; // Nome com destaque
-    const typingSpeed = 100; // Velocidade de digitação (ms)
+    const textToType = "Hello, World! Eu sou o ";
+    const name = "<span class='highlight-red'>Vitor</span>";
+    const typingSpeed = 100;
 
     let charIndex = 0;
 
@@ -44,7 +42,6 @@
         }
     }
 
-    // Inicia o efeito de digitação quando a página carrega
-    window.onload = typeText;
+    window.addEventListener('load', typeText);
 </script>
 {% endblock %}

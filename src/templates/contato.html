@@ -2,33 +2,28 @@
 {% block content %}
 <h1 class="title">Entre em Contato</h1>
 <div class="contato-container">
-    <!-- Lateral Esquerda com Informação -->
-    <div class="contato-info">
+    <section class="contato-info">
         <h2>Fale Comigo</h2>
-        <p>Se você tem dúvidas ou sugestões envie uma mensagem!</p>
-        <p>Email: <a href="mailto:vitorbueno191@gmail.com" class="link-curriculo">vitorbueno191@gmail.com</a></p>
-        <p>Endereço: São Jose dos campos -SP</p>
-    </div>
+        <p>Se você tem dúvidas ou sugestões, envie uma mensagem!</p>
+        <p>Email: <a href="mailto:vitorbueno191@gmail.com">vitorbueno191@gmail.com</a></p>
+        <p>Endereço: São Jose dos campos - SP</p>
+    </section>
 
-    <!-- Formulário de Contato -->
-    <div class="contato-form">
-        <form class="form-group"
-        action="https://formspree.io/f/mdkkvagq"
-        method="POST"
-      >
-        <label>
-          Seu email:
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Sua mensagem:
-          <textarea name="message" required></textarea>
-        </label>
-        <!-- your other form fields go here -->
-        <button class="btn" type="submit"><strong>Enviar</strong></button>
-      </form>
-    </div>
+    <section class="contato-form">
+        <form action="https://formspree.io/f/mdkkvagq" method="POST">
+            <div class="form-group">
+                <label for="email-input">Seu email:</label>
+                <input id="email-input" type="email" name="email" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="message-input">Sua mensagem:</label>
+                <textarea id="message-input" name="message" required aria-required="true"></textarea>
+            </div>
+            <button class="btn" type="submit"><strong>Enviar</strong></button>
+        </form>
+    </section>
 </div>
-<div class="estrela"> <img src="../static/imgs/estrela.gif" alt="Estrela animada">
-</div> 
+<div class="estrela">
+    <img src="../static/imgs/estrela.gif" alt="Decoração animada">
+</div>
 {% endblock %}
